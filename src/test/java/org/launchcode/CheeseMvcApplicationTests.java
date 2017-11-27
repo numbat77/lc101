@@ -1,4 +1,4 @@
-package org.launchcode.cheesemvc;
+package org.launchcode;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
