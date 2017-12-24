@@ -5,13 +5,15 @@
 <h1 th:text="${title}">Default Title</h1>
 <nav th:replace="fragments :: navigation"></nav>
 <form method="post" th:object="${cheese}">
-    <label th:for="name">Name</label>
+    <label th:for="name">Cheese</label>
     <input th:field="*{name}" />
     <span class="error" th:errors="*{name}" ></span>
 
     <label th:for="description">Description</label>
     <input th:field="*{description}" />
     <span class="error" th:errors="*{description}" ></span>
+
+    <input type="hidden" th:field="*{cheeseId}" />
 
     <label th:for="type">Type</label>
     <select th:field="*{type}">
@@ -20,12 +22,13 @@
                 th:value="${cheeseType}">
         </option>
     </select>
+    <span class="error" th:errors="*{type}" ></span>
 
     <label th:for="rating">Rating</label>
     <input th:field="*{rating}" />
     <span class="error" th:errors="*{rating}" ></span>
 
-    <input type="submit" value="Add Cheese" />
+    <input type="submit" value="Edit Cheese" />
 </form>
 </body>
 </html>
